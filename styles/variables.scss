@@ -1,0 +1,37 @@
+$prime-1:#0058aa;
+$prime-2:#f75e2e;
+$prime-3:#ecfa4d;
+$prime-4:#656a70;
+
+
+$pr-1-light-1: mix(#fff,$prime-1,40%);
+$pr-1-light-2: mix(#fff,$prime-1,75%);
+$pr-1-light-3: mix(#fff,$prime-1,90%);
+
+$pr-2-light-1: mix(#fff,$prime-2,40%);
+$pr-2-light-2: mix(#fff,$prime-2,75%);
+$pr-2-light-3: mix(#fff,$prime-2,90%);
+
+$pr-3-light-1: mix(#fff,$prime-3,40%);
+$pr-3-light-2: mix(#fff,$prime-3,75%);
+$pr-3-light-3: mix(#fff,$prime-3,90%);
+
+$pr-4-light-1: mix(#fff,$prime-4,40%);
+$pr-4-light-2: mix(#fff,$prime-4,75%);
+$pr-4-light-3: mix(#fff,$prime-4,90%);
+
+$pr-1-dark-1: mix(black,$prime-1,20%);
+$pr-1-dark-2: mix(black,$prime-1,50%);
+$pr-1-dark-3: mix(black,$prime-1,70%);
+
+$pr-2-dark-1: mix(black,$prime-2,20%);
+$pr-2-dark-2: mix(black,$prime-2,50%);
+$pr-2-dark-3: mix(black,$prime-2,70%);
+
+$pr-3-dark-1: mix(black,$prime-3,20%);
+$pr-3-dark-2: mix(black,$prime-3,50%);
+$pr-3-dark-3: mix(black,$prime-3,70%);
+
+$pr-4-dark-1: mix(black,$prime-4,20%);
+$pr-4-dark-2: mix(black,$prime-4,50%);
+$pr-4-dark-3: mix(black,$prime-4,70%);
