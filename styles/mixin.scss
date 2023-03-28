@@ -1,8 +1,9 @@
 @import './variables.scss';
+@import './fonts.scss';
 
 
 @mixin headen {
     font-size: 35px;
-    font-family: sans-serif;
+    font-family: 'Pop-regular';
     color: $pr-4-dark-3;
 }

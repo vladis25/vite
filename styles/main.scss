@@ -1,6 +1,9 @@
 @import './variables.scss';
 @import './mixin.scss';
 @import './base.scss';
+@import './fonts.scss';
+@import './tab.scss';
+@import './popup.scss';
 
 
 .grid {
@@ -111,6 +114,7 @@ h2:hover {
     padding: 5px;
     background-color: $pr-1-light-1;
     cursor: pointer;
+    width: fit-content;
 }
 
 h3 {
@@ -133,35 +137,48 @@ h6 {
 p {
     font-size: 14px;
     color: $pr-4-dark-2;
-    font-family: sans-serif;
+    font-family: 'Pop-regular';
 }
 .subtitle {
     font-size: 20px;
     color: $pr-4-dark-2;
-    font-family: sans-serif;
+    font-family: 'Pop-regular';
 }
 .subtitle:hover {
     padding: 10px;
     background-color: $pr-1-light-1;
-    font-family: sans-serif;
+    font-family: 'Pop-regular';
+    width: fit-content;
 }
 .list li {
     @include headen;
     font-size: 15px;
     list-style-type: none;
+
 }
 
+
+.list li {
+    position: relative;
+    padding-left: 35px;
+}
 
 .list li::before {
-    border-left: 2px solid black ;
-    border-bottom: 2px solid black;
-    width: 10px;
-    height: 5px;
-    transform: rotate(-45deg);
-    content: "";
-    display: inline-block;
-    margin-right: 5px;
+    content: "✓";
+    color:white;
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: $pr-1-light-1;
+    border-radius: 50%;
+
 }
+
 .Quotation {
     @include headen;
     font-size: 17px;
@@ -173,7 +190,7 @@ p {
 
 // input
 
-.inputs input{
+.inputs input, select{
     height: 30px;
     width: 250px;
     margin: 10px;
@@ -181,17 +198,235 @@ p {
     border: 2px solid $pr-4-light-2;
 }
 
-.first{
+.first,
+.second{
     margin: 40px;
     background-color: $pr-4-light-3;
 }
 .first:hover{
-    background-color:none;
+    background-color:white;
 }
-.first:active {
+.second:hover{
+    border: 2px solid $pr-1-light-1;
+    background-color:white;
+}
+.first:active,
+.second:active {
     border: 2px solid $pr-1-light-1;
 }
+.second::marker {
+    color: $pr-4-light-3;
+}
 
-input:focus-visible {
+input:focus-visible,
+select:focus-visible {
     outline: none;
+}
+
+.wrap .success {
+    border: 2px solid $pr-3-dark-1;
+    color: $pr-3-dark-1;
+    &::placeholder {
+        font-weight: bold;
+        color: $pr-3-dark-1;
+    }
+}
+
+.wrap .error {
+    border: 2px solid $pr-2-light-2;
+    color: $pr-2-light-1;
+        &::placeholder {
+        font-weight: bold;
+        color: $pr-2-light-1;
+    }
+}
+
+.wrapp input{
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    outline: auto;
+}
+
+.gal,
+.round {
+    color: $pr-4-light-2;
+    outline: inherit;
+}
+
+.gal:hover,
+.round:hover {
+    color: $pr-1-light-1;
+
+}
+.gal:active,
+.round:active {
+    background-color: $pr-1-light-1;
+    color: $pr-1-light-1;
+}
+.gal:disabled,
+.round:disabled {
+    background-color: $pr-4-light-2;
+    color: $pr-4-light-2;
+}
+.buttons button{
+    margin: 10px;
+    border-radius: 4px ;
+    text-align: center;
+    height: 40px;
+}
+.size {
+    width: 250px;
+}
+
+.orange{
+    background-color: $prime-2;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+}
+.orange:hover{
+    background-color: $pr-2-light-1;
+}
+.orange:disabled{
+    background-color: $pr-4-light-2;
+}
+.blue {
+    background-color: $prime-1;
+    color: white;
+    border: none;
+}
+.big-blue{
+    background-color: $prime-1;
+    width: 320px;
+    color: white;
+    border: none;
+}
+.big-blue:hover,
+.blue:hover{
+    background-color: $pr-1-light-1;
+}
+button:disabled{
+    background-color: $pr-4-light-2;
+}
+.outlined-orange {
+    border: 2px solid $prime-2;
+    color: $prime-2;
+    text-transform: uppercase;
+    background-color: transparent;
+    &:hover{
+        border: none;
+        background-color: $pr-2-light-1;
+        color: white;
+    }
+}
+.outlined-blue {
+    border: 2px solid $prime-1;
+    color: $prime-1;
+    text-transform: uppercase;
+    background-color: transparent;
+    &:hover{
+        border: none;
+        background-color: $pr-1-light-1;
+        color: white;
+    }
+}
+.orange-small{
+    background-color: $prime-2;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+}
+.orange-small:hover{
+    background-color: $pr-2-light-1;
+}
+.orange-small:disabled{
+    background-color: $pr-4-light-2;
+}
+.blue-small {
+    background-color: $prime-1;
+    color: white;
+    border: none;
+}
+.big-blue-small{
+    background-color: $prime-1;
+    width: 180px;
+    color: white;
+    border: none;
+}
+.big-blue-small:hover,
+.blue-small:hover{
+    background-color: $pr-1-light-1;
+}
+
+.outlined-orange-small {
+    border: 2px solid $prime-2;
+    color: $prime-2;
+    text-transform: uppercase;
+    background-color: transparent;
+    &:hover{
+        border: none;
+        background-color: $pr-2-light-1;
+        color: white;
+    }
+}
+.outlined-blue-small {
+    border: 2px solid $prime-1;
+    color: $prime-1;
+    text-transform: uppercase;
+    background-color: transparent;
+    &:hover{
+        border: none;
+        background-color: $pr-1-light-1;
+        color: white;
+    }
+}
+.size-sm {
+    width: 150px;
+    height: 30px;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+.pagination a:hover {
+    color: white;
+    background-color: $prime-1;
+    border-radius: 50%;
+}
+.logo ul {
+    
+    display: flex;
+    & li {
+        list-style: none;
+        margin-right: 10px;
+        & img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.logo-white {
+    background-color: aqua;
+    width:fit-content;
+    border-radius: 0%;
+}
+.border li{
+    border: 1px solid white;
+    padding: 12px;
+    border-radius: 50%;
+}
+.background li{
+    background-color: $pr-1-dark-2;
+    padding: 12px;
+    border-radius: 50%;
+
 }

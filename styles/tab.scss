@@ -1,0 +1,146 @@
+@import './variables.scss';
+@import './fonts.scss';
+
+
+.pc-tab > input,
+.pc-tab section > div {
+  display: none;
+}
+
+#tab1:checked ~ section .tab1,
+#tab2:checked ~ section .tab2,
+#tab3:checked ~ section .tab3 {
+  display: block;
+}
+
+#tab1:checked ~ nav .tab1,
+#tab2:checked ~ nav .tab2,
+#tab3:checked ~ nav .tab3 {
+  color: red;
+}
+
+/* Visual Styles */
+
+$activeColor: #ffffff;
+$unactiveColor: #eeeeee;
+$unactiveHoverColor: #dddddd;
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,400,700);
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Raleway';
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 60px;
+  color: #e74c3c;
+}
+
+.pc-tab { 
+  width: 100%;
+  max-width: 700px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      label {
+        font-family: "Raleway";
+        float: left;
+        padding: 15px 25px;
+        color: pr-4-light-1;
+        border-bottom: 2px solid rgb(227, 227, 227);  
+        &:hover {
+          border-bottom: 2px solid $pr-2-light-1;
+          color: $pr-2-light-1;
+        }
+        &:active {
+          border-bottom: 2px solid $pr-2-light-1;
+          color: $pr-2-light-1;
+        }
+      }
+      &:not(:last-child) label {
+         border-right-width: 0; 
+      }
+    }
+  }
+  section {
+    font-family: "Droid Serif";
+    clear: both;
+    div {
+      padding: 20px; 
+      width: 100%;
+      line-height: 1.5em;
+      letter-spacing: 0.3px;
+      h2 {
+        margin: 0;
+        font-family: "Raleway";
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+#tab1:checked ~ nav .tab1,
+#tab2:checked ~ nav .tab2,
+#tab3:checked ~ nav .tab3 {
+  label {
+    color: black;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      bottom: -1px;
+    }
+  }
+}
+
+.pagination-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.pagination {
+  position: relative;
+  left: 40%;
+  top: 40%;
+}
+.pagination span{
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $pr-4-light-2;
+  color: $pr-4-light-2;
+}
+.pagination span:hover{
+  border: 3px solid $prime-1;
+  background-color: white;
+}
+.pagination span:active{
+  border: 3px solid $prime-1;
+  background-color: white;
+}
+.pagination span:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+}
